@@ -1,5 +1,4 @@
 <script>
-
   import {consoleCommand} from "./terminal"
 
   let show_terminal = true
@@ -19,98 +18,95 @@
     }
   }
 
-
 </script>
 
 {#if show_terminal}
-<div class="terminal">
-  <div class="header">
-    <span class="bullet bullet-red" on:click={onCloseClick}></span>
-    <span class="bullet bullet-yellow"></span>
-    <span class="bullet bullet-green"></span>
-    <span class="title">~/svelte-terminal/index.js</span>
-  </div>
-  <div class="window">
-    <pre>
-      {console_info}
-    </pre>
-    <div class="terminal-prompt" >
-        <!-- svelte-ignore a11y-autofocus -->
-        <textarea class="cli" rows="2" on:keyup={onKeyDown} bind:value={input_value} autofocus></textarea>
+  <div class="terminal">
+    <div class="header">
+      <span class="bullet bullet-red" on:click={onCloseClick}></span>
+      <span class="bullet bullet-yellow"></span>
+      <span class="bullet bullet-green"></span>
+      <span class="title">~/svelte-terminal/index.js</span>
+    </div>
+    <div class="window">
+      <pre>
+        {console_info}
+      </pre>
+      <div class="terminal-prompt" >
+          <!-- svelte-ignore a11y-autofocus -->
+          <textarea class="cli" rows="2" on:keyup={onKeyDown} bind:value={input_value} autofocus></textarea>
+      </div>
     </div>
   </div>
-</div>
 {/if}
 
 <style>
 
-/*https://socket.io/*/
-.terminal{
-  background-color: rgba(156, 163, 175, 0.7);
-  width: 100%;
-  height: 100%;
-  text-align: left;
-}
-.header{
-  background: #e8e8e8;
-  border-radius: 4px 4px 0 0;
-  padding: 3px 1rem;
-}
-.header .bullet{
-  height: 11px;
-  width: 11px;
-  display: inline-block;
-  background: #ccc;
-  border-radius: 100%;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.header .bullet-red{
-  background: #df7065;
-}
-.header .bullet-yellow{
-  background: #e6bb46;;
-}
-.header .bullet-green{
-  background: #5bcc8b;;
-}
-.window{
-  overflow-y: scroll;
-  padding: 0.5rem;
-  background-color: rgba(8, 8, 8, 0.5);
-  height: 100%;
-  color: #e8e8e8;
-}
-.window pre{
-  font-family: consolas,monospace;
-  margin : 0px;
-}
+  /*https://socket.io/*/
+  .terminal{
+    background-color: rgba(156, 163, 175, 0.7);
+    width: 100%;
+    height: 100%;
+    text-align: left;
+  }
+  .header{
+    background: #e8e8e8;
+    border-radius: 4px 4px 0 0;
+    padding: 3px 1rem;
+  }
+  .header .bullet{
+    height: 11px;
+    width: 11px;
+    display: inline-block;
+    background: #ccc;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .header .bullet-red{
+    background: #df7065;
+  }
+  .header .bullet-yellow{
+    background: #e6bb46;;
+  }
+  .header .bullet-green{
+    background: #5bcc8b;;
+  }
+  .window{
+    overflow-y: scroll;
+    padding: 0.5rem;
+    background-color: rgba(8, 8, 8, 0.5);
+    height: 100%;
+    color: #e8e8e8;
+  }
+  .window pre{
+    font-family: consolas,monospace;
+    margin : 0px;
+  }
 
-/*--primary-color: #1a95e0;
-//https://terminalcss.xyz/dark/#*/
-.terminal-prompt{
-  display: flex;
-}
-/*https://jsconsole.com/*/
-.terminal-prompt .cli{
-  overflow-y: hidden;
-  color: #dedede;
-  resize: none;
-  background: none;
-  font-family: consolas,monospace;
-  border: 0;
-  display: inline-block;
-  width: 100%;
-  outline: none;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-}
-.terminal-prompt::before {
-  font-family: consolas,monospace;
-  content: ">";
-}
-
-
+  /*--primary-color: #1a95e0;
+  //https://terminalcss.xyz/dark/#*/
+  .terminal-prompt{
+    display: flex;
+  }
+  /*https://jsconsole.com/*/
+  .terminal-prompt .cli{
+    overflow-y: hidden;
+    color: #dedede;
+    resize: none;
+    background: none;
+    font-family: consolas,monospace;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  .terminal-prompt::before {
+    font-family: consolas,monospace;
+    content: ">";
+  }
 </style>

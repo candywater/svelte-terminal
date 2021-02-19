@@ -5,6 +5,7 @@ type following commands to use console.
 :exit exit console
 `
 const ABOUT_INFO = `this is a console by candy water. ver 0.0.1
+visit https://github.com/candywater/svelte-terminal/ for more info.
 `
 const EXIT_INFO = `have a nice day!
 `
