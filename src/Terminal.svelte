@@ -6,10 +6,13 @@
   const PREFIX_SYMBOL_DOLLER = "$"
   const PREFIX_SYMBOL_BIG = ">"
   const PREFIX_SYMBOL_SHARP = "#"
+  const DEFAULT_FONT_SIZE = "0.85rem"
 
   export let title
   export let commands 
+  // prefix symbol cannot changed, because .terminal-prompt::before cannot change
   let prefix_symbol
+  export let font_size
   
   let show_terminal = true
   let minimize_terminal = false
@@ -25,6 +28,7 @@
     if(!title) title = DEFAULT_TITLE
     if(!commands) commands = consoleCommand
     if(!prefix_symbol) prefix_symbol = PREFIX_SYMBOL_DOLLER
+    if(!font_size) font_size = DEFAULT_FONT_SIZE
   }
 
   function onCloseClick(){
@@ -95,6 +99,7 @@
     font-family: Monaco;
     border-radius: .25rem;
     line-height: 1.25rem;
+    font-size: 0.85rem;
   }
   .header{
     background: #e8e8e8;
