@@ -3,6 +3,8 @@
 this is a terminal-like html console window.
 you can write your own command.
 
+[LIVE DEMO HERE](https://candywater.github.io/svelte-terminal/)
+
 #### screenshot
 
 ![screenshot](./assets/screenshot_v0.0.0.png)
@@ -18,7 +20,6 @@ you can write your own command.
 - [x] fix input shake issue
 - [] add hightlight if possible
 
-**still on work, not usable**
 
 
 ### how to use
