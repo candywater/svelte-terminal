@@ -24,7 +24,7 @@ function onCloseClick(){
 
 function onKeyDown(e){
   if(e.key === "Enter"){
-    console_info += "> " + input_value // include enter(\n)
+    console_info += ">" + input_value // include enter(\n)
     consoleCommand(input_value)
     input_value = ""
   }
@@ -114,6 +114,7 @@ function consoleCommand(input){
 }
 .window pre{
   font-family: consolas,monospace;
+  margin : 0px;
 }
 
 /*--primary-color: #1a95e0;
@@ -124,7 +125,6 @@ function consoleCommand(input){
 /*https://jsconsole.com/*/
 .terminal-prompt .cli{
   overflow-y: hidden;
-  padding-left: 0.3rem;
   color: #dedede;
   resize: none;
   background: none;
