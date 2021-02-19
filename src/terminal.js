@@ -12,20 +12,20 @@ const EXIT_INFO = `have a nice day!
 const ERROR_INFO = `command not found. Type :help for help.
 `
 
-export function consoleCommand(input, console_info, closeWin){
+export function consoleCommand(input, closeWin = ()=>{}){
   let str = input.trim();
   switch (str) {
     case ":help":
     case "help":
-      return console_info + HELP_INFO
+      return HELP_INFO
     case ":about":
     case "about":
-      return console_info + ABOUT_INFO 
+      return ABOUT_INFO 
     case ":exit":
     case "exit":
       setTimeout(closeWin, 350);
-      return console_info + EXIT_INFO
+      return EXIT_INFO
     default:
-      return console_info + ERROR_INFO
+      return ERROR_INFO
   }
 }

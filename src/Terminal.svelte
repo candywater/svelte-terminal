@@ -14,7 +14,7 @@
   function onKeyDown(e){
     if(e.key === "Enter"){
       console_info += ">" + input_value // include enter(\n)
-      console_info = consoleCommand(input_value, console_info, closeWin)
+      console_info += consoleCommand(input_value, closeWin)
       input_value = ""
     }
   }
