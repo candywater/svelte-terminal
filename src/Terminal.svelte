@@ -1,7 +1,7 @@
 <script>
   import {consoleCommand} from "./terminal"
 
-  const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n\n`
+  const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
   const DEFAULT_TITLE = "~/svelte-terminal/index.js"
   const PREFIX_SYMBOL_DOLLER = "$"
   const PREFIX_SYMBOL_BIG = ">"
