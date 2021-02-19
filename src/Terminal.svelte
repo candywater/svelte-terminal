@@ -3,9 +3,13 @@
 
   const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n\n`
   const DEFAULT_TITLE = "~/svelte-terminal/index.js"
+  const PREFIX_SYMBOL_DOLLER = "$"
+  const PREFIX_SYMBOL_BIG = ">"
+  const PREFIX_SYMBOL_SHARP = "#"
 
   export let title
   export let commands 
+  let prefix_symbol
   
   let show_terminal = true
   let minimize_terminal = false
@@ -20,6 +24,7 @@
   function onLoad(){
     if(!title) title = DEFAULT_TITLE
     if(!commands) commands = consoleCommand
+    if(!prefix_symbol) prefix_symbol = PREFIX_SYMBOL_DOLLER
   }
 
   function onCloseClick(){
@@ -28,7 +33,7 @@
 
   function onKeyDown(e){
     if(e.key === "Enter"){
-      console_info += ">" + input_value // include enter(\n)
+      console_info += prefix_symbol + input_value // include enter(\n)
       console_info += commands(input_value, closeWin) + "\n"
       input_value = ""
     }
@@ -86,9 +91,10 @@
     width: 100%;
     height: 100%;
     text-align: left;
-    font-family: consolas,monospace,Monaco,Menlo,"Space Mono";
+    /* font-family: consolas,monospace,Monaco,Menlo,"Space Mono"; */
+    font-family: Monaco;
     border-radius: .25rem;
-    line-height: 1.1rem;
+    line-height: 1.25rem;
   }
   .header{
     background: #e8e8e8;
@@ -157,6 +163,6 @@
   }
   .terminal-prompt::before {
     font-family: inherit;
-    content: ">";
+    content: "$";
   }
 </style>
