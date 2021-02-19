@@ -1,6 +1,6 @@
 ### svelte-terminal
 
-this is a terminal like html console window.
+this is a terminal-like html console window.
 you can write your own command.
 
 #### screenshot

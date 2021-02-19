@@ -23,6 +23,6 @@
     "dist"
   ],
   "version": "1.0.0",
-  "description": "this is a terminal like console window",
+  "description": "this is a terminal-like console window",
   "repository": "https://github.com/candywater/svelte-terminal"
 }
