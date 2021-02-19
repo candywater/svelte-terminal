@@ -3,19 +3,27 @@
 
   let show_terminal = true
 
-  let console_info = `type :help to show commands. \n`
+  const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
+
+  let console_info = DEFAULT_CONSOLE_INFO
   let input_value = ""
 
   function onCloseClick(){
-    //show_terminal = false
+    show_terminal = false
   }
 
   function onKeyDown(e){
     if(e.key === "Enter"){
       console_info += ">" + input_value // include enter(\n)
-      console_info = consoleCommand(input_value, console_info)
+      console_info = consoleCommand(input_value, console_info, closeWin)
       input_value = ""
     }
+  }
+
+  function closeWin(){
+    show_terminal = false
+    console_info = DEFAULT_CONSOLE_INFO
+    input_value = ""
   }
 
 </script>
