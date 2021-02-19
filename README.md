@@ -16,5 +16,6 @@ you can write your own command.
 - [] fix layout
 - [] fix font
 - [] fix input shake issue
+- [] add hightlight if possible
 
 **still on work, not usable**
