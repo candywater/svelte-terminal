@@ -9,6 +9,12 @@ you can write your own command.
 
 ![screenshot](./assets/screenshot_v0.0.0.png)
 
+### install 
+
+```
+yarn add candywater/svelte-terminal#main
+```
+
 ### todo list
 
 - [x] round layout
