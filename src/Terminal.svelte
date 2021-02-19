@@ -1,10 +1,11 @@
 <script>
-  import {consoleCommand} from "./terminal"
+  import {consoleCommandOrigin} from "./terminal"
 
   const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
   const DEFAULT_TITLE = "~/svelte-terminal/index.js"
 
   export let title
+  export let consoleCommand
   
   let show_terminal = true
   let minimize_terminal = false
@@ -18,6 +19,7 @@
 
   function onLoad(){
     if(!title) title = DEFAULT_TITLE
+    if(!consoleCommand) consoleCommand = consoleCommandOrigin
   }
 
   function onCloseClick(){
