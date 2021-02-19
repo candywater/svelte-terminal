@@ -135,6 +135,8 @@ function consoleCommand(input){
   outline: none;
   font-size: inherit;
   line-height: inherit;
+  margin: 0;
+  padding: 0;
 }
 .terminal-prompt::before {
   font-family: consolas,monospace;
