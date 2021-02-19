@@ -1,60 +1,28 @@
 <script>
 
-let show_terminal
+  import {consoleCommand} from "./terminal"
 
-const HELP_INFO = `HELP INFO
-type following commands to use console.
-:help help
-:about about this console
-:exit exit console
-`
-const ABOUT_INFO = `this is a console by candy water. ver 0.0.1
-`
-const EXIT_INFO = `have a nice day!
-`
-const ERROR_INFO = `command not found. Type :help for help.
-`
+  let show_terminal = true
 
-let console_info = `type :help to show commands. \n`
-let input_value = ""
+  let console_info = `type :help to show commands. \n`
+  let input_value = ""
 
-function onCloseClick(){
-  show_terminal = false
-}
-
-function onKeyDown(e){
-  if(e.key === "Enter"){
-    console_info += ">" + input_value // include enter(\n)
-    consoleCommand(input_value)
-    input_value = ""
+  function onCloseClick(){
+    //show_terminal = false
   }
-}
 
-function consoleCommand(input){
-  let str = input.trim();
-  switch (str) {
-    case ":help":
-    case "help":
-      console_info += HELP_INFO
-      break;
-    case ":about":
-    case "about":
-      console_info += ABOUT_INFO 
-      break;
-    case ":exit":
-    case "exit":
-      console_info += EXIT_INFO
-      setTimeout(() => {
-        show_terminal = false;
-      }, 350);
-      break;
-    default:
-      console_info += ERROR_INFO
-      break;
+  function onKeyDown(e){
+    if(e.key === "Enter"){
+      console_info += ">" + input_value // include enter(\n)
+      console_info = consoleCommand(input_value, console_info)
+      input_value = ""
+    }
   }
-}
+
+
 </script>
 
+{#if show_terminal}
 <div class="terminal">
   <div class="header">
     <span class="bullet bullet-red" on:click={onCloseClick}></span>
@@ -72,6 +40,7 @@ function consoleCommand(input){
     </div>
   </div>
 </div>
+{/if}
 
 <style>
 
