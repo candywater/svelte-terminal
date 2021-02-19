@@ -1,8 +1,10 @@
 <script>
   import {consoleCommand} from "./terminal"
 
-  
   const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
+  const DEFAULT_TITLE = "~/svelte-terminal/index.js"
+
+  export let title
   
   let show_terminal = true
   let minimize_terminal = false
@@ -11,6 +13,12 @@
 
   let console_info = DEFAULT_CONSOLE_INFO
   let input_value = ""
+
+  onLoad()
+
+  function onLoad(){
+    if(!title) title = DEFAULT_TITLE
+  }
 
   function onCloseClick(){
     closeWin()
@@ -52,7 +60,7 @@
       <span class="bullet bullet-red" on:click={onCloseClick}></span>
       <span class="bullet bullet-yellow" on:click={onMinimizeWin}></span>
       <span class="bullet bullet-green" on:click={onMaximizeWin}></span>
-      <span class="title">~/svelte-terminal/index.js</span>
+      <span class="title">{title}</span>
     </div>
     {#if minimize_terminal === false}
       <div class="window">
