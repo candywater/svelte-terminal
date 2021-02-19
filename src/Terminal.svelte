@@ -12,7 +12,7 @@
   export let commands 
   // prefix symbol cannot changed, because .terminal-prompt::before cannot change
   let prefix_symbol
-  export let font_size
+  export let fontsize
   
   let show_terminal = true
   let minimize_terminal = false
@@ -28,7 +28,7 @@
     if(!title) title = DEFAULT_TITLE
     if(!commands) commands = consoleCommand
     if(!prefix_symbol) prefix_symbol = PREFIX_SYMBOL_DOLLER
-    if(!font_size) font_size = DEFAULT_FONT_SIZE
+    if(!fontsize) fontsize = DEFAULT_FONT_SIZE
   }
 
   function onCloseClick(){
@@ -66,7 +66,7 @@
 </script>
 
 {#if show_terminal}
-  <div class="terminal" style="font-size:{font_size};{max_style}">
+  <div class="terminal" style="font-size:{fontsize};{max_style}">
     <div class="header">
       <span class="bullet bullet-red" on:click={onCloseClick}></span>
       <span class="bullet bullet-yellow" on:click={onMinimizeWin}></span>

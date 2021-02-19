@@ -39,7 +39,11 @@ or you can set your own title, and commands
     else return "I don't understand cause I'm a teapot!"
   }
 </script>
-<Terminal title="your_title" consoleCommand={command}></Terminal>
+<Terminal 
+  title="your_title" 
+  consoleCommand={command}
+  fontsize="0.85rem"
+/>
 ```
 
 ### write your own command
