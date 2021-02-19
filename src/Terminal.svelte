@@ -66,7 +66,7 @@
 </script>
 
 {#if show_terminal}
-  <div class="terminal" style={max_style}>
+  <div class="terminal" style="font-size:{font_size};{max_style}">
     <div class="header">
       <span class="bullet bullet-red" on:click={onCloseClick}></span>
       <span class="bullet bullet-yellow" on:click={onMinimizeWin}></span>
