@@ -9,13 +9,13 @@ you can write your own command.
 
 ### todo list
 
-- [] round layout
+- [x] round layout
 - [] customize theme
-- [] customize title
-- [] customize command
-- [] fix layout
-- [] fix font
-- [] fix input shake issue
+- [x] customize title
+- [x] customize command
+- [x] fix layout
+- [x] fix font
+- [x] fix input shake issue
 - [] add hightlight if possible
 
 **still on work, not usable**
