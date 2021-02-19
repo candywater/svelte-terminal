@@ -30,7 +30,7 @@ you can write your own command.
 <Terminal></Terminal>
 ```
 
-or you can set your own title, and commands
+or you can set your own title, and commands ...
 
 ```js
 <script>
