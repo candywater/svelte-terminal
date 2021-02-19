@@ -77,6 +77,7 @@
     height: 100%;
     text-align: left;
     font-family: consolas,monospace,Monaco,Menlo,"Space Mono";
+    border-radius: .25rem;
   }
   .header{
     background: #e8e8e8;
