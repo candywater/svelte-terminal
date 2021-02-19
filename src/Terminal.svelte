@@ -9,6 +9,7 @@
   let input_value = ""
 
   function onCloseClick(){
+    closeWin()
   }
 
   function onKeyDown(e){
