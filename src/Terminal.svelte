@@ -9,7 +9,6 @@
   let input_value = ""
 
   function onCloseClick(){
-    closeWin()
   }
 
   function onKeyDown(e){
@@ -56,6 +55,7 @@
     width: 100%;
     height: 100%;
     text-align: left;
+    font-family: consolas,monospace,Monaco,Menlo,"Space Mono";
   }
   .header{
     background: #e8e8e8;
@@ -75,10 +75,10 @@
     background: #df7065;
   }
   .header .bullet-yellow{
-    background: #e6bb46;;
+    background: #e6bb46;
   }
   .header .bullet-green{
-    background: #5bcc8b;;
+    background: #5bcc8b;
   }
   .window{
     overflow-y: scroll;
@@ -88,7 +88,7 @@
     color: #e8e8e8;
   }
   .window pre{
-    font-family: consolas,monospace;
+    font-family: inherit;
     margin : 0px;
   }
 
@@ -103,7 +103,7 @@
     color: #dedede;
     resize: none;
     background: none;
-    font-family: consolas,monospace;
+    font-family: inherit;
     border: 0;
     display: inline-block;
     width: 100%;
@@ -114,7 +114,7 @@
     padding: 0;
   }
   .terminal-prompt::before {
-    font-family: consolas,monospace;
+    font-family: inherit;
     content: ">";
   }
 </style>
