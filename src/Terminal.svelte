@@ -6,6 +6,9 @@
   
   let show_terminal = true
   let minimize_terminal = false
+  let maximize_terminal = false
+  let max_style = ""
+
   let console_info = DEFAULT_CONSOLE_INFO
   let input_value = ""
 
@@ -31,14 +34,24 @@
     minimize_terminal = !minimize_terminal 
   }
 
+  function onMaximizeWin(){
+    maximize_terminal = !maximize_terminal
+    if(maximize_terminal){
+      max_style = "position: fixed; top: 0; left: 0;"
+    }
+    else{
+      max_style = ""
+    }
+  }
+
 </script>
 
 {#if show_terminal}
-  <div class="terminal">
+  <div class="terminal" style={max_style}>
     <div class="header">
       <span class="bullet bullet-red" on:click={onCloseClick}></span>
       <span class="bullet bullet-yellow" on:click={onMinimizeWin}></span>
-      <span class="bullet bullet-green"></span>
+      <span class="bullet bullet-green" on:click={onMaximizeWin}></span>
       <span class="title">~/svelte-terminal/index.js</span>
     </div>
     {#if minimize_terminal === false}
