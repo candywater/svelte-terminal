@@ -1,10 +1,11 @@
 <script>
   import {consoleCommand} from "./terminal"
 
-  let show_terminal = true
-
+  
   const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
-
+  
+  let show_terminal = true
+  let minimize_terminal = false
   let console_info = DEFAULT_CONSOLE_INFO
   let input_value = ""
 
@@ -26,25 +27,31 @@
     input_value = ""
   }
 
+  function onMinimizeWin(){
+    minimize_terminal = !minimize_terminal 
+  }
+
 </script>
 
 {#if show_terminal}
   <div class="terminal">
     <div class="header">
       <span class="bullet bullet-red" on:click={onCloseClick}></span>
-      <span class="bullet bullet-yellow"></span>
+      <span class="bullet bullet-yellow" on:click={onMinimizeWin}></span>
       <span class="bullet bullet-green"></span>
       <span class="title">~/svelte-terminal/index.js</span>
     </div>
-    <div class="window">
-      <pre>
-        {console_info}
-      </pre>
-      <div class="terminal-prompt" >
-          <!-- svelte-ignore a11y-autofocus -->
-          <textarea class="cli" rows="2" on:keyup={onKeyDown} bind:value={input_value} autofocus></textarea>
+    {#if minimize_terminal === false}
+      <div class="window">
+        <pre>
+          {console_info}
+        </pre>
+        <div class="terminal-prompt" >
+            <!-- svelte-ignore a11y-autofocus -->
+            <textarea class="cli" rows="2" on:keyup={onKeyDown} bind:value={input_value} autofocus></textarea>
+        </div>
       </div>
-    </div>
+    {/if}
   </div>
 {/if}
 
