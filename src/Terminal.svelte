@@ -9,7 +9,7 @@
   let input_value = ""
 
   function onCloseClick(){
-    show_terminal = false
+    closeWin()
   }
 
   function onKeyDown(e){
