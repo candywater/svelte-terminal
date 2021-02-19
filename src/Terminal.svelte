@@ -1,11 +1,11 @@
 <script>
-  import {consoleCommandOrigin} from "./terminal"
+  import {consoleCommand} from "./terminal"
 
-  const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
+  const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n\n`
   const DEFAULT_TITLE = "~/svelte-terminal/index.js"
 
   export let title
-  export let consoleCommand
+  export let commands 
   
   let show_terminal = true
   let minimize_terminal = false
@@ -19,7 +19,7 @@
 
   function onLoad(){
     if(!title) title = DEFAULT_TITLE
-    if(!consoleCommand) consoleCommand = consoleCommandOrigin
+    if(!commands) commands = consoleCommand
   }
 
   function onCloseClick(){
@@ -29,7 +29,7 @@
   function onKeyDown(e){
     if(e.key === "Enter"){
       console_info += ">" + input_value // include enter(\n)
-      console_info += consoleCommand(input_value, closeWin) + "\n"
+      console_info += commands(input_value, closeWin) + "\n"
       input_value = ""
     }
   }
@@ -88,6 +88,7 @@
     text-align: left;
     font-family: consolas,monospace,Monaco,Menlo,"Space Mono";
     border-radius: .25rem;
+    line-height: 1.1rem;
   }
   .header{
     background: #e8e8e8;
