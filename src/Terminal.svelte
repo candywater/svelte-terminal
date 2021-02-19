@@ -92,6 +92,15 @@
     vertical-align: middle;
     margin-right: 5px;
   }
+  .header .bullet-red:hover{
+    background: #ee4334;
+  }
+  .header .bullet-yellow:hover{
+    background: #F59E0B;
+  }
+  .header .bullet-green:hover{
+    background: #10B981;
+  }
   .header .bullet-red{
     background: #df7065;
   }
