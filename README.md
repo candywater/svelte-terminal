@@ -43,6 +43,7 @@ or you can set your own title, and commands
   title="your_title" 
   consoleCommand={command}
   fontsize="0.85rem"
+  fontfamily="Monaco"
 />
 ```
 
