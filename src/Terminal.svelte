@@ -99,7 +99,7 @@
     height: 100%;
     text-align: left;
     /* font-family: consolas,monospace,Monaco,Menlo,"Space Mono"; */
-    font-family: Monaco;
+    font-family: consolas, Monaco;
     border-radius: .25rem;
     line-height: 1.25rem;
     font-size: 0.85rem;
