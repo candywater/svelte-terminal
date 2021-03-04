@@ -25,6 +25,9 @@ yarn add candywater/svelte-terminal#main
 - [x] fix font
 - [x] fix input shake issue
 - [] add hightlight if possible
+- [] draggble
+- [] mini size
+- [] customize close function
 
 
 
