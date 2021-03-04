@@ -10,6 +10,7 @@
 
   export let title
   export let commands 
+  export let exactClose
   // prefix symbol cannot changed, because .terminal-prompt::before cannot change
   let prefix_symbol
   export let fontsize
@@ -29,6 +30,7 @@
   function onLoad(){
     if(!title) title = DEFAULT_TITLE
     if(!commands) commands = consoleCommand
+    if(!exactClose) exactClose = ()=>{}
     if(!prefix_symbol) prefix_symbol = PREFIX_SYMBOL_DOLLER
     if(fontsize) font_style += `font-size:${fontsize};`
     if(fontfamily) font_style += `font-family:${fontfamily};`
@@ -50,6 +52,7 @@
     show_terminal = false
     console_info = DEFAULT_CONSOLE_INFO
     input_value = ""
+    exactClose()
   }
 
   function onMinimizeWin(){

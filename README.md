@@ -27,7 +27,7 @@ yarn add candywater/svelte-terminal#main
 - [] add hightlight if possible
 - [] draggble
 - [] mini size
-- [] customize close function
+- [x] customize close function
 
 
 
@@ -54,6 +54,7 @@ or you can set your own title, and commands ...
   consoleCommand={command}
   fontsize="0.85rem"
   fontfamily="Monaco"
+  exactClose={()=>{}}
 />
 ```
 
