@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
   import {consoleCommand} from "./terminal"
 
   const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`
