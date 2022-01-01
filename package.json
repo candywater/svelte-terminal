@@ -2,7 +2,7 @@
   "name": "svelte-terminal",
   "author": "candywater",
   "license": "MIT",
-  "svelte": "src/index.js",
+  "svelte": "src/index.ts",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
