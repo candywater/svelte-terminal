@@ -7212,7 +7212,7 @@ visit https://github.com/candywater/svelte-terminal/ for more info. `;
     	append_styles(target, "svelte-1oxfifh", ".cw-terminal.svelte-1oxfifh.svelte-1oxfifh{background-color:rgba(156, 163, 175, 0.7);width:100%;height:100%;text-align:left;font-family:consolas, Monaco;border-radius:0.25rem;line-height:1.25rem;font-size:0.85rem}.header.svelte-1oxfifh.svelte-1oxfifh{background:#e8e8e8;border-radius:4px 4px 0 0;padding:3px 1rem}.header.svelte-1oxfifh .bullet.svelte-1oxfifh{height:11px;width:11px;display:inline-block;background:#ccc;border-radius:100%;vertical-align:middle;margin-right:5px}.header.svelte-1oxfifh .bullet-red.svelte-1oxfifh:hover{background:#ee4334}.header.svelte-1oxfifh .bullet-yellow.svelte-1oxfifh:hover{background:#f59e0b}.header.svelte-1oxfifh .bullet-green.svelte-1oxfifh:hover{background:#10b981}.header.svelte-1oxfifh .bullet-red.svelte-1oxfifh{background:#df7065}.header.svelte-1oxfifh .bullet-yellow.svelte-1oxfifh{background:#e6bb46}.header.svelte-1oxfifh .bullet-green.svelte-1oxfifh{background:#5bcc8b}.window.svelte-1oxfifh.svelte-1oxfifh{overflow-y:scroll;padding:0.5rem;background-color:rgba(8, 8, 8, 0.5);height:100%;color:#e8e8e8}.window.svelte-1oxfifh pre.svelte-1oxfifh{font-family:inherit;margin:0px}.terminal-prompt.svelte-1oxfifh.svelte-1oxfifh{display:flex}.terminal-prompt.svelte-1oxfifh .cli.svelte-1oxfifh{overflow-y:hidden;color:#dedede;resize:none;background:none;font-family:inherit;border:0;display:inline-block;width:100%;outline:none;font-size:inherit;line-height:inherit;margin:0;padding:0}.terminal-prompt.svelte-1oxfifh.svelte-1oxfifh::before{font-family:inherit;content:\"$\"}");
     }
 
-    // (74:0) {#if show_terminal}
+    // (80:0) {#if show_terminal}
     function create_if_block(ctx) {
     	let div1;
     	let div0;
@@ -7250,7 +7250,7 @@ visit https://github.com/candywater/svelte-terminal/ for more info. `;
     			attr(span3, "class", "title");
     			attr(div0, "class", "header svelte-1oxfifh");
     			attr(div1, "class", "cw-terminal svelte-1oxfifh");
-    			attr(div1, "style", div1_style_value = "" + (/*font_style*/ ctx[4] + /*max_style*/ ctx[3]));
+    			attr(div1, "style", div1_style_value = `${/*font_style*/ ctx[4]} ${/*max_style*/ ctx[3]} `);
     		},
     		m(target, anchor) {
     			insert(target, div1, anchor);
@@ -7292,7 +7292,7 @@ visit https://github.com/candywater/svelte-terminal/ for more info. `;
     				if_block = null;
     			}
 
-    			if (dirty & /*font_style, max_style*/ 24 && div1_style_value !== (div1_style_value = "" + (/*font_style*/ ctx[4] + /*max_style*/ ctx[3]))) {
+    			if (dirty & /*font_style, max_style*/ 24 && div1_style_value !== (div1_style_value = `${/*font_style*/ ctx[4]} ${/*max_style*/ ctx[3]} `)) {
     				attr(div1, "style", div1_style_value);
     			}
     		},
@@ -7305,7 +7305,7 @@ visit https://github.com/candywater/svelte-terminal/ for more info. `;
     	};
     }
 
-    // (82:4) {#if minimize_terminal === false}
+    // (88:4) {#if minimize_terminal === false}
     function create_if_block_1(ctx) {
     	let div1;
     	let pre;
@@ -7442,7 +7442,11 @@ visit https://github.com/candywater/svelte-terminal/ for more info. `;
     			}
     		}
 
-    		new draggable_bundle.exports.Draggable(document.querySelector(".cw-terminal"), { draggable: "div" });
+    		new draggable_bundle.exports.Draggable(document.querySelector(".cw-terminal"),
+    		{
+    				draggable: ".cw-terminal",
+    				mirror: { constrainDimensions: true }
+    			});
     	}
 
     	function onCloseClick() {

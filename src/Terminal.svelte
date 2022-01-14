@@ -32,6 +32,10 @@
   let console_info = DEFAULT_CONSOLE_INFO;
   let input_value = "";
 
+  let _top: number;
+  let _left: number;
+  let _win_pos : string = "";
+
   onMount(onLoad);
 
   function onLoad() {
@@ -49,7 +53,10 @@
       }
     }
     const draggable = new Draggable(document.querySelector(".cw-terminal"), {
-      draggable: "div",
+      draggable: ".cw-terminal",
+      mirror: {
+        constrainDimensions: true,
+      },
     });
   }
 
@@ -86,7 +93,7 @@
 </script>
 
 {#if show_terminal}
-  <div class="cw-terminal" style="{font_style}{max_style}">
+  <div class="cw-terminal" style={`${font_style} ${max_style} `}>
     <div class="header">
       <span class="bullet bullet-red" on:click={onCloseClick} />
       <span class="bullet bullet-yellow" on:click={onMinimizeWin} />
