@@ -1,6 +1,7 @@
 <script lang="ts">
   import { consoleCommand } from "./terminal";
   import { onMount } from "svelte";
+  import { Draggable } from "@shopify/draggable";
 
   const DEFAULT_CONSOLE_INFO = `type :help to show commands. \n`;
   const DEFAULT_TITLE = "~/svelte-terminal/index.js";
@@ -47,6 +48,9 @@
         font_style += `font-family:${fontfamily};`;
       }
     }
+    const draggable = new Draggable(document.querySelector(".cw-terminal"), {
+      draggable: "li",
+    });
   }
 
   function onCloseClick() {
@@ -82,7 +86,7 @@
 </script>
 
 {#if show_terminal}
-  <div class="terminal" style="{font_style}{max_style}">
+  <div class="cw-terminal" style="{font_style}{max_style}">
     <div class="header">
       <span class="bullet bullet-red" on:click={onCloseClick} />
       <span class="bullet bullet-yellow" on:click={onMinimizeWin} />
@@ -111,7 +115,7 @@
 
 <style>
   /*https://socket.io/*/
-  .terminal {
+  .cw-terminal {
     background-color: rgba(156, 163, 175, 0.7);
     width: 100%;
     height: 100%;
