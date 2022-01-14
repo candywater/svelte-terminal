@@ -49,7 +49,7 @@
       }
     }
     const draggable = new Draggable(document.querySelector(".cw-terminal"), {
-      draggable: "li",
+      draggable: "div",
     });
   }
 

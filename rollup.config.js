@@ -2,6 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
+import livereload from 'rollup-plugin-livereload';
 import preprocess from 'svelte-preprocess';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
@@ -44,9 +45,9 @@ export default [{
 		name: 'app'
 	}],
 	plugins: [
-		!production && serve(),
+		// !production && serve(),
 		!production && livereload('docs'),
-		production && terser(), 
+		production && terser(),
 		...svelte_plugins]
 }
 ];
