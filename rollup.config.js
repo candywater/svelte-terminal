@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
 import preprocess from 'svelte-preprocess';
+import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -32,7 +33,7 @@ export default [{
 		{ file: pkg.module, 'format': 'es' },
 		{ file: pkg.main, 'format': 'umd', name },
 	],
-	plugins: svelte_plugins
+	plugins: [terser(), ...svelte_plugins]
 },
 {
 	input: 'src/demo.ts',
@@ -42,6 +43,10 @@ export default [{
 		format: 'iife',
 		name: 'app'
 	}],
-	plugins: svelte_plugins
+	plugins: [
+		!production && serve(),
+		!production && livereload('docs'),
+		production && terser(), 
+		...svelte_plugins]
 }
 ];
