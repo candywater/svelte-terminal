@@ -49,8 +49,10 @@ or you can set your own title, and commands ...
 <Terminal 
   title="your_title" 
   consoleCommand={command}
-  fontsize="0.85rem"
-  fontfamily="Monaco"
+  styleSetting={
+    fontsize : "0.85rem",
+    fontfamily : "Monaco"
+  }  
 />
 ```
 
