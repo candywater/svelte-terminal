@@ -81,9 +81,7 @@
     </div>
     {#if minimize_terminal === false}
       <div class="window">
-        <pre>
-          {console_info}
-        </pre>
+        <pre>{console_info}</pre>
         <div class="terminal-prompt" >
             <!-- svelte-ignore a11y-autofocus -->
             <textarea class="cli" rows="2" on:keyup={onKeyDown} bind:value={input_value} autofocus></textarea>
