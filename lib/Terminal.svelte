@@ -74,9 +74,12 @@
 {#if show_terminal}
   <div class="terminal" style="{font_style}{max_style}">
     <div class="header">
-      <span class="bullet bullet-red" on:click={onCloseClick}></span>
-      <span class="bullet bullet-yellow" on:click={onMinimizeWin}></span>
-      <span class="bullet bullet-green" on:click={onMaximizeWin}></span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span class="bullet bullet-red" on:click={onCloseClick} role="button" tabindex="0"></span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span class="bullet bullet-yellow" on:click={onMinimizeWin} role="button" tabindex="0"></span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span class="bullet bullet-green" on:click={onMaximizeWin} role="button" tabindex="0"></span>
       <span class="title">{title}</span>
     </div>
     {#if minimize_terminal === false}
