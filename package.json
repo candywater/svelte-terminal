@@ -3,7 +3,7 @@
   "author": "candywater",
   "license": "MIT",
   "type": "module",
-  "svelte": "lib/main.ts",
+  "main": "lib/main.ts",
   "exports": {
     ".": {
       "svelte": "./dist/svelte-terminal.js"
