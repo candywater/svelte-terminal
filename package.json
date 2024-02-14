@@ -6,7 +6,7 @@
   "main": "lib/main.ts",
   "exports": {
     ".": {
-      "svelte": "./dist/svelte-terminal.js"
+      "svelte": "./lib/main.ts"
     }
   },
   "scripts": {
