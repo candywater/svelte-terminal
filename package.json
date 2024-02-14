@@ -2,8 +2,13 @@
   "name": "svelte-terminal",
   "author": "candywater",
   "license": "MIT",
-  "svelte": "lib/main.ts",
   "type": "module",
+  "svelte": "lib/main.ts",
+  "exports": {
+    ".": {
+      "svelte": "./dist/svelte-terminal.js"
+    }
+  },
   "scripts": {
     "build": "vite build"
   },
