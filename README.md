@@ -12,7 +12,7 @@ you can write your own command.
 ### install 
 
 ```
-yarn add candywater/svelte-terminal#main
+pnpm add candywater/svelte-terminal#0.0.2
 ```
 
 ### todo list
