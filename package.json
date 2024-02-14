@@ -2,18 +2,24 @@
   "name": "svelte-terminal",
   "author": "candywater",
   "license": "MIT",
-  "svelte": "src/index.ts",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "svelte": "lib/main.ts",
+  "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@shopify/draggable": "^1.0.0-beta.8",
+    "@tsconfig/svelte": "^3.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "rollup": "^2.0.0",
-    "rollup-plugin-svelte": "^6.0.0",
-    "svelte": "^3.0.0"
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@types/node": "^20.11.17",
+    "svelte": "^4.2.8",
+    "vite": "^5.0.8",
+    "vite-plugin-string": "^1.2.3"
   },
   "keywords": [
     "svelte"
@@ -22,14 +28,7 @@
     "src",
     "dist"
   ],
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "this is a terminal-like console window",
-  "repository": "https://github.com/candywater/svelte-terminal",
-  "dependencies": {
-    "@rollup/plugin-typescript": "^8.3.0",
-    "@shopify/draggable": "^1.0.0-beta.8",
-    "@tsconfig/svelte": "^3.0.0",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.4"
-  }
+  "repository": "https://github.com/candywater/svelte-terminal"
 }
