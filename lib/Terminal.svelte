@@ -8,22 +8,32 @@
   const PREFIX_SYMBOL_SHARP = "#"
   const DEFAULT_FONT_SIZE = "0.85rem"
 
-  export let title
-  export let commands 
-  export let exactClose
   // prefix symbol cannot changed, because .terminal-prompt::before cannot change
   let prefix_symbol
-  export let fontsize
-  export let fontfamily
-  
-  let show_terminal = true
-  let minimize_terminal = false
-  let maximize_terminal = false
-  let max_style = ""
-  let font_style = ""
+  interface Props {
+    title: any;
+    commands: any;
+    exactClose: any;
+    fontsize: any;
+    fontfamily: any;
+  }
 
-  let console_info = DEFAULT_CONSOLE_INFO
-  let input_value = ""
+  let {
+    title = $bindable(),
+    commands = $bindable(),
+    exactClose = $bindable(),
+    fontsize,
+    fontfamily
+  }: Props = $props();
+  
+  let show_terminal = $state(true)
+  let minimize_terminal = $state(false)
+  let maximize_terminal = false
+  let max_style = $state("")
+  let font_style = $state("")
+
+  let console_info = $state(DEFAULT_CONSOLE_INFO)
+  let input_value = $state("")
 
   onLoad()
 
@@ -74,20 +84,20 @@
 {#if show_terminal}
   <div class="terminal" style="{font_style}{max_style}">
     <div class="header">
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span class="bullet bullet-red" on:click={onCloseClick} role="button" tabindex="0"></span>
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span class="bullet bullet-yellow" on:click={onMinimizeWin} role="button" tabindex="0"></span>
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span class="bullet bullet-green" on:click={onMaximizeWin} role="button" tabindex="0"></span>
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <span class="bullet bullet-red" onclick={onCloseClick} role="button" tabindex="0"></span>
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <span class="bullet bullet-yellow" onclick={onMinimizeWin} role="button" tabindex="0"></span>
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <span class="bullet bullet-green" onclick={onMaximizeWin} role="button" tabindex="0"></span>
       <span class="title">{title}</span>
     </div>
     {#if minimize_terminal === false}
       <div class="window">
         <pre>{console_info}</pre>
         <div class="terminal-prompt" >
-            <!-- svelte-ignore a11y-autofocus -->
-            <textarea class="cli" rows="2" on:keyup={onKeyDown} bind:value={input_value} autofocus></textarea>
+            <!-- svelte-ignore a11y_autofocus -->
+            <textarea class="cli" rows="2" onkeyup={onKeyDown} bind:value={input_value} autofocus></textarea>
         </div>
       </div>
     {/if}
